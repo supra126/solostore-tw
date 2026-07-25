@@ -5,6 +5,18 @@
 
 > 展示品牌為 `Acme`（占位）。改 `config/site.ts` 或設 `NEXT_PUBLIC_SITE_NAME` 即可換成你的品牌。
 
+## 畫面
+
+![店面首頁](docs/screenshots/storefront-hero.jpg)
+
+跑完 `pnpm db:seed` 後的商品列表——無圖商品會依名稱自動生成漸層（`lib/products/gradient.ts`），不必先準備素材。
+
+![商品列表](docs/screenshots/storefront-products.jpg)
+
+商品詳述頁，未登入也可瀏覽；按下購買才導向登入。
+
+![商品詳述頁](docs/screenshots/product-detail.jpg)
+
 ## 技術棧
 
 - **框架**：[Next.js 16](https://nextjs.org/)（App Router、`proxy.ts`）
