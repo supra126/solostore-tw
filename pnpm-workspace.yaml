@@ -1,0 +1,16 @@
+# pnpm 11：build script 核准與依賴 overrides 集中在這裡
+# （pnpm 10+ 起，package.json 的 "pnpm" 欄位不再被讀取）
+
+# 允許安裝時執行 build script 的套件（原生二進位需編譯）
+allowBuilds:
+  '@tailwindcss/oxide': true
+  esbuild: true
+  sharp: true
+
+overrides:
+  # 刻意把 TypeScript 釘在 5.9：TS 7 是 native 版（tsgo），
+  # 會讓 Next 16 的建置型別檢查 crash，故不升 7.x。
+  typescript: ^5.9.0
+  # 修掉 audit 的 moderate：next 內含的舊 postcss、drizzle-kit 內含的舊 esbuild。
+  postcss: ^8.5.16
+  esbuild: '>=0.25.0'
